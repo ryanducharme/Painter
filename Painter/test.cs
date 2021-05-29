@@ -8,6 +8,6 @@ namespace Painter
 {
     class test
     {
-        //this is a diff comment
+        //test
     }
 }

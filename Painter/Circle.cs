@@ -10,6 +10,7 @@ namespace Painter
 {
     class Circle : Shape
     {
+        //test comment for Git
         List<Point> polyCircle = new List<Point>();
         Point Latest { get; set; }
         Color clr;
