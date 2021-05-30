@@ -56,9 +56,10 @@ namespace Painter
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
-            bm.Save("C:\\Users\\rducharme\\source\\repos\\Painter\\Painter\\temp\\temp.png");
+            bm.Save("C:\\Users\\Ryan\\Documents\\GitHub\\Painter\\Painter\\temp\\temp.png");
             points.Clear();
             pictureBox1.Refresh();
+            
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -66,6 +67,7 @@ namespace Painter
             paintCount++;
             label1.Text = "p Count = " + paintCount;
             e.Graphics.DrawImage(bm,0, 0);
+            
         }
         private void ColorSelectorButton(object sender, EventArgs e)
         {
@@ -83,6 +85,16 @@ namespace Painter
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+            //create a new spirograph
+            new Spirograph(
+                Int32.Parse(incrementTextBox.Text),Int32.Parse(offsetTextBox.Text),Int32.Parse(lengthTextBox.Text),Int32.Parse(widthTextBox.Text))
+                .Draw(Graphics.FromImage(bm), new Pen(clr, 1));
+            pictureBox1.Refresh();
         }
     }
 }
