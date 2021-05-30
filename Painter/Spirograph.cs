@@ -9,6 +9,8 @@ namespace Painter
 {
     class Spirograph : Shape
     {
+        //Loop through the points of a circle and draw a shape at that point, continue though all 360 degrees of the circle.
+        //https://www.mathopenref.com/coordparamcircle.html
         private int Increment { get; set; }
         private int Offset { get; set; }
         private int Length { get; set; }
@@ -24,7 +26,7 @@ namespace Painter
         {
             for(int i = 0; i < Increment; i++)
             {
-                g.DrawRectangle(pen, i += Offset, i += Offset, Length, Width);
+                //g.DrawRectangle(pen, i += Offset, i += Offset, Length, Width);
                 g.DrawEllipse(pen, i += Offset, i += Offset, Length, Width);
             }
         }
