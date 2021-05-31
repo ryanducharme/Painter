@@ -22,13 +22,33 @@ namespace Painter
             Length = length;
             Width = width;
         }
+        public Spirograph() { }
         public override void Draw(Graphics g, Pen pen)
         {
-            for(int i = 0; i < Increment; i++)
+            var h = 200;
+            var k = 200;
+            var r = 20;
+            //double theta = 0;
+            var step = 2*Math.PI/30;
+
+            for(var theta = 0.0; theta < 2*Math.PI; theta += step)
             {
-                //g.DrawRectangle(pen, i += Offset, i += Offset, Length, Width);
-                g.DrawEllipse(pen, i += Offset, i += Offset, Length, Width);
+                var x = h + r * Math.Cos(theta);
+                var y = k - r * Math.Sin(theta);
+
+                var rect = new Rectangle((int)x, (int)y, 200, 200);
+                var rectf = new RectangleF((float)x, (float)y, 200, 200);
+                //g.DrawRectangle(pen, rect);
+                g.DrawEllipse(pen, rectf);
+
             }
+
+
+            //for(int i = 0; i < Increment; i++)
+            //{
+            //    //g.DrawRectangle(pen, i += Offset, i += Offset, Length, Width);
+            //    g.DrawEllipse(pen, i += Offset, i += Offset, Length, Width);
+            //}
         }
     }
 }
