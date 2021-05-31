@@ -90,15 +90,23 @@ namespace Painter
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
             //create a new spirograph
-            new Spirograph(
-                Int32.Parse(incrementTextBox.Text),
-                Int32.Parse(offsetTextBox.Text),
-                Int32.Parse(lengthTextBox.Text),
-                Int32.Parse(widthTextBox.Text)).
-                Draw(Graphics.FromImage(bm), new Pen(clr, 1));
+            //new Spirograph(
+            //    Int32.Parse(incrementTextBox.Text),
+            //    Int32.Parse(offsetTextBox.Text),
+            //    Int32.Parse(lengthTextBox.Text),
+            //    Int32.Parse(widthTextBox.Text)).
+            //    Draw(Graphics.FromImage(bm), new Pen(clr, 1));
+            new Spirograph().Draw(Graphics.FromImage(bm), new Pen(clr, 1));
+
+
             pictureBox1.Refresh();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bm.Dispose();
         }
     }
 }
