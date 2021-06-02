@@ -35,10 +35,6 @@ namespace Painter
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.brushSizeTextBox = new System.Windows.Forms.TextBox();
             this.labelBrushSize = new System.Windows.Forms.Label();
@@ -46,24 +42,29 @@ namespace Painter
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.button5 = new System.Windows.Forms.Button();
-            this.lengthTextBox = new System.Windows.Forms.TextBox();
-            this.widthTextBox = new System.Windows.Forms.TextBox();
+            this.xTextBox = new System.Windows.Forms.TextBox();
+            this.yTextBox = new System.Windows.Forms.TextBox();
             this.incrementTextBox = new System.Windows.Forms.TextBox();
-            this.offsetTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.radiusTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.mousePosLabel = new System.Windows.Forms.Label();
+            this.spirographCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(12, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 600);
+            this.pictureBox1.Size = new System.Drawing.Size(800, 702);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -73,9 +74,10 @@ namespace Painter
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(406, 638);
+            this.button1.Location = new System.Drawing.Point(817, 213);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(20, 20);
             this.button1.TabIndex = 1;
@@ -85,9 +87,10 @@ namespace Painter
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.Lime;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(432, 638);
+            this.button2.Location = new System.Drawing.Point(843, 213);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(20, 20);
             this.button2.TabIndex = 2;
@@ -97,9 +100,10 @@ namespace Painter
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.Blue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(458, 638);
+            this.button3.Location = new System.Drawing.Point(869, 213);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(20, 20);
             this.button3.TabIndex = 3;
@@ -109,9 +113,10 @@ namespace Painter
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.BackColor = System.Drawing.Color.Black;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(484, 638);
+            this.button4.Location = new System.Drawing.Point(895, 213);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(20, 20);
             this.button4.TabIndex = 4;
@@ -119,41 +124,10 @@ namespace Painter
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.ColorSelectorButton);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(966, 692);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 15);
-            this.label1.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(922, 692);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 15);
-            this.label2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(806, 638);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 15);
-            this.label3.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(762, 638);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 15);
-            this.label4.TabIndex = 8;
-            // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(616, 636);
+            this.clearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearButton.Location = new System.Drawing.Point(905, 26);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 23);
             this.clearButton.TabIndex = 9;
@@ -163,7 +137,8 @@ namespace Painter
             // 
             // brushSizeTextBox
             // 
-            this.brushSizeTextBox.Location = new System.Drawing.Point(510, 636);
+            this.brushSizeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.brushSizeTextBox.Location = new System.Drawing.Point(817, 184);
             this.brushSizeTextBox.Name = "brushSizeTextBox";
             this.brushSizeTextBox.Size = new System.Drawing.Size(34, 23);
             this.brushSizeTextBox.TabIndex = 10;
@@ -171,8 +146,9 @@ namespace Painter
             // 
             // labelBrushSize
             // 
+            this.labelBrushSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBrushSize.AutoSize = true;
-            this.labelBrushSize.Location = new System.Drawing.Point(550, 639);
+            this.labelBrushSize.Location = new System.Drawing.Point(857, 187);
             this.labelBrushSize.Name = "labelBrushSize";
             this.labelBrushSize.Size = new System.Drawing.Size(60, 15);
             this.labelBrushSize.TabIndex = 11;
@@ -188,7 +164,6 @@ namespace Painter
             this.menuStrip1.Size = new System.Drawing.Size(1074, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // toolStripMenuItem1
             // 
@@ -206,6 +181,7 @@ namespace Painter
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Location = new System.Drawing.Point(817, 27);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
@@ -215,58 +191,57 @@ namespace Painter
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // lengthTextBox
+            // xTextBox
             // 
-            this.lengthTextBox.Location = new System.Drawing.Point(817, 53);
-            this.lengthTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lengthTextBox.Name = "lengthTextBox";
-            this.lengthTextBox.Size = new System.Drawing.Size(110, 23);
-            this.lengthTextBox.TabIndex = 14;
+            this.xTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xTextBox.Location = new System.Drawing.Point(817, 53);
+            this.xTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xTextBox.Name = "xTextBox";
+            this.xTextBox.Size = new System.Drawing.Size(110, 23);
+            this.xTextBox.TabIndex = 14;
             // 
-            // widthTextBox
+            // yTextBox
             // 
-            this.widthTextBox.Location = new System.Drawing.Point(817, 78);
-            this.widthTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.widthTextBox.Name = "widthTextBox";
-            this.widthTextBox.Size = new System.Drawing.Size(110, 23);
-            this.widthTextBox.TabIndex = 15;
+            this.yTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.yTextBox.Location = new System.Drawing.Point(817, 78);
+            this.yTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.yTextBox.Name = "yTextBox";
+            this.yTextBox.Size = new System.Drawing.Size(110, 23);
+            this.yTextBox.TabIndex = 15;
             // 
             // incrementTextBox
             // 
+            this.incrementTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.incrementTextBox.Location = new System.Drawing.Point(817, 103);
             this.incrementTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.incrementTextBox.Name = "incrementTextBox";
             this.incrementTextBox.Size = new System.Drawing.Size(110, 23);
             this.incrementTextBox.TabIndex = 16;
-            // 
-            // offsetTextBox
-            // 
-            this.offsetTextBox.Location = new System.Drawing.Point(817, 128);
-            this.offsetTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.offsetTextBox.Name = "offsetTextBox";
-            this.offsetTextBox.Size = new System.Drawing.Size(110, 23);
-            this.offsetTextBox.TabIndex = 17;
+            this.incrementTextBox.Text = "20";
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(932, 53);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 15);
+            this.label5.Size = new System.Drawing.Size(14, 15);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Length";
+            this.label5.Text = "X";
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(932, 80);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 15);
+            this.label6.Size = new System.Drawing.Size(14, 15);
             this.label6.TabIndex = 19;
-            this.label6.Text = "Width";
+            this.label6.Text = "Y";
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(932, 105);
             this.label7.Name = "label7";
@@ -274,36 +249,64 @@ namespace Painter
             this.label7.TabIndex = 20;
             this.label7.Text = "Increment";
             // 
+            // radiusTextBox
+            // 
+            this.radiusTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radiusTextBox.Location = new System.Drawing.Point(817, 130);
+            this.radiusTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radiusTextBox.Name = "radiusTextBox";
+            this.radiusTextBox.Size = new System.Drawing.Size(110, 23);
+            this.radiusTextBox.TabIndex = 21;
+            this.radiusTextBox.Text = "10";
+            // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(932, 130);
+            this.label8.Location = new System.Drawing.Point(933, 133);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 15);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Offset";
+            this.label8.Size = new System.Drawing.Size(42, 15);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Radius";
+            // 
+            // mousePosLabel
+            // 
+            this.mousePosLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mousePosLabel.AutoSize = true;
+            this.mousePosLabel.Location = new System.Drawing.Point(1020, 31);
+            this.mousePosLabel.Name = "mousePosLabel";
+            this.mousePosLabel.Size = new System.Drawing.Size(0, 15);
+            this.mousePosLabel.TabIndex = 23;
+            // 
+            // spirographCheckBox
+            // 
+            this.spirographCheckBox.AutoSize = true;
+            this.spirographCheckBox.Location = new System.Drawing.Point(817, 159);
+            this.spirographCheckBox.Name = "spirographCheckBox";
+            this.spirographCheckBox.Size = new System.Drawing.Size(84, 19);
+            this.spirographCheckBox.TabIndex = 24;
+            this.spirographCheckBox.Text = "Spirograph";
+            this.spirographCheckBox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 741);
+            this.Controls.Add(this.spirographCheckBox);
+            this.Controls.Add(this.mousePosLabel);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.radiusTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.offsetTextBox);
             this.Controls.Add(this.incrementTextBox);
-            this.Controls.Add(this.widthTextBox);
-            this.Controls.Add(this.lengthTextBox);
+            this.Controls.Add(this.yTextBox);
+            this.Controls.Add(this.xTextBox);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.labelBrushSize);
             this.Controls.Add(this.brushSizeTextBox);
             this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -330,10 +333,6 @@ namespace Painter
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.TextBox brushSizeTextBox;
         private System.Windows.Forms.Label labelBrushSize;
@@ -341,14 +340,16 @@ namespace Painter
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox lengthTextBox;
-        private System.Windows.Forms.TextBox widthTextBox;
+        private System.Windows.Forms.TextBox xTextBox;
+        private System.Windows.Forms.TextBox yTextBox;
         private System.Windows.Forms.TextBox incrementTextBox;
-        private System.Windows.Forms.TextBox offsetTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox radiusTextBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label mousePosLabel;
+        private System.Windows.Forms.CheckBox spirographCheckBox;
     }
 }
 
