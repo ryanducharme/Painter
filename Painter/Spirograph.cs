@@ -18,8 +18,8 @@ namespace Painter
         public Spirograph(int increment, int x, int y, int radius)
         {
             Increment = increment;
-            X = y;
-            Y = x;
+            X = x;
+            Y = y;
             Radius = radius;
         }
         public Spirograph() { }
@@ -38,12 +38,10 @@ namespace Painter
                     var x = h + r * Math.Cos(theta);
                     var y = k - r * Math.Sin(theta);
 
-                    //var rect = new Rectangle((int)x, (int)y, 200, 200);
                     var rectf = new RectangleF((float)x, (float)y, 20, 20);
-                    //g.DrawRectangle(pen, rect);
+                    //g.RotateTransform(30f);
                     g.DrawEllipse(pen, rectf);
-                    //g.RotateTransform(1f);
-
+                    //g.TranslateTransform((float)x, (float)y);
                 }
             }
             
