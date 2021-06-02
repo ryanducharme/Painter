@@ -22,7 +22,6 @@ namespace Painter
     {
         public List<Point> points = new List<Point>();
         Color clr = System.Drawing.Color.Black;
-        int paintCount = 0;
         bool mouseDown;
         Bitmap bm = new Bitmap(800,600);
         int brushSize;
@@ -44,13 +43,24 @@ namespace Painter
             mouseDown = true;
             Point mousePoint = pictureBox1.PointToClient(Cursor.Position);
             points.Add(mousePoint);
+
+            if(mouseDown == true && spirographCheckBox.Checked)
+            {
+                new Spirograph(
+                Int32.Parse(incrementTextBox.Text),
+                Int32.Parse(mousePoint.X.ToString()),
+                Int32.Parse(mousePoint.Y.ToString()),
+                Int32.Parse(radiusTextBox.Text)).
+                Draw(Graphics.FromImage(bm), new Pen(clr, 1f));
+            }
             pictureBox1.Refresh();
         }
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+            Point mousePoint = pictureBox1.PointToClient(Cursor.Position);
+            mousePosLabel.Text = mousePoint.X.ToString() + ", " + mousePoint.Y.ToString();
             if (mouseDown)
             {
-                Point mousePoint = pictureBox1.PointToClient(Cursor.Position);
                 points.Add(mousePoint);
                 pictureBox1.Refresh();
             }
@@ -65,10 +75,12 @@ namespace Painter
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            new PolyLine(points).Draw(Graphics.FromImage(bm), new Pen(clr, brushSize));
-            paintCount++;
-            e.Graphics.DrawImage(bm,0, 0);
+            if(spirographCheckBox.Checked != true)
+            {
+                new PolyLine(points).Draw(Graphics.FromImage(bm), new Pen(clr, brushSize));
+            }
             
+            e.Graphics.DrawImage(bm,0, 0);
         }
         private void ColorSelectorButton(object sender, EventArgs e)
         {
@@ -81,11 +93,6 @@ namespace Painter
             //bm.Dispose();
             bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.Refresh();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -114,11 +121,6 @@ namespace Painter
         {
             bm.Dispose();
             File.Delete("..\\temp.png");
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
