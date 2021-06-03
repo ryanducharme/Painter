@@ -56,7 +56,7 @@ namespace Painter
                     Rectangle rec = new Rectangle((int)x, (int)y, r * 2, r * 2);
                     g.DrawEllipse(pen, rec);
 
-                    rotation+=10;
+                    //rotation++;
                     //Rotate back to normal around the same point</pre>
                     //matrix.RotateAt(-rotation, new PointF(ellipseCenterX, ellipseCenterY));
                     //g.Transform = matrix;
