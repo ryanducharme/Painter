@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,27 +26,35 @@ namespace Painter
         public Spirograph() { }
         public override void Draw(Graphics g, Pen pen)
         {
+            
             var h = X;
             var k = Y;
             var r = Radius;
+            var matrix = new Matrix();
+            float ellipseCenterX = X + (r * 2);
+            float ellipseCenterY = Y + (r * 2);
             //double theta = 0;
             var step = 2*Math.PI/Increment;
 
-            for(int i = 0; i < 100; i++)
+            float rotation = 1f;
+            for (int i = 0; i < 1; i++)
             {
+                
                 for (var theta = 0.0; theta < 2 * Math.PI; theta += step)
                 {
                     var x = h + r * Math.Cos(theta);
                     var y = k - r * Math.Sin(theta);
+                    
 
                     var rectf = new RectangleF((float)x, (float)y, 20, 20);
-                    //g.RotateTransform(30f);
+                    //g.DrawRectangle(pen, rect);
                     g.DrawEllipse(pen, rectf);
-                    //g.TranslateTransform((float)x, (float)y);
+                    //g.RotateTransform(1f);
+
                 }
             }
-            
 
+            
         }
     }
 }
