@@ -47,9 +47,19 @@ namespace Painter
                     
 
                     var rectf = new RectangleF((float)x, (float)y, 20, 20);
-                    //g.DrawRectangle(pen, rect);
-                    g.DrawEllipse(pen, rectf);
                     //g.RotateTransform(1f);
+                    //g.DrawEllipse(pen, rectf);
+
+                    matrix.RotateAt(rotation, new PointF(ellipseCenterX, ellipseCenterY));
+                    g.Transform = matrix;
+                    //Draw the rotated ellipse
+                    Rectangle rec = new Rectangle((int)x, (int)y, r * 2, r * 2);
+                    g.DrawEllipse(pen, rec);
+
+                    //rotation++;
+                    //Rotate back to normal around the same point</pre>
+                    //matrix.RotateAt(-rotation, new PointF(ellipseCenterX, ellipseCenterY));
+                    //g.Transform = matrix;
 
                 }
             }
