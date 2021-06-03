@@ -36,7 +36,7 @@ namespace Painter
             //double theta = 0;
             var step = 2*Math.PI/Increment;
 
-            float rotation = 1f;
+            float rotation = 12f;
             for (int i = 0; i < 1; i++)
             {
                 
@@ -45,7 +45,6 @@ namespace Painter
                     var x = h + r * Math.Cos(theta);
                     var y = k - r * Math.Sin(theta);
                     
-
                     var rectf = new RectangleF((float)x, (float)y, 20, 20);
                     //g.RotateTransform(1f);
                     //g.DrawEllipse(pen, rectf);
@@ -56,10 +55,9 @@ namespace Painter
                     Rectangle rec = new Rectangle((int)x, (int)y, r * 2, r * 2);
                     g.DrawEllipse(pen, rec);
 
-                    //rotation++;
                     //Rotate back to normal around the same point</pre>
-                    //matrix.RotateAt(-rotation, new PointF(ellipseCenterX, ellipseCenterY));
-                    //g.Transform = matrix;
+                    matrix.RotateAt(-rotation, new PointF(ellipseCenterX, ellipseCenterY));
+                    g.Transform = matrix;
 
                 }
             }
