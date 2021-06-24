@@ -108,12 +108,17 @@ namespace Painter
             //new Spirograph().Draw(Graphics.FromImage(bm), new Pen(clr, 2));
             //pictureBox1.Refresh();
 
-            new Spirograph(
+            try
+            {
+                new Spirograph(
                 Int32.Parse(incrementTextBox.Text),
-                Int32.Parse(yTextBox.Text), 
+                Int32.Parse(yTextBox.Text),
                 Int32.Parse(xTextBox.Text),
                 Int32.Parse(radiusTextBox.Text)).
                 Draw(Graphics.FromImage(bm), new Pen(clr, 1f));
+            }
+            catch{ }
+            
             pictureBox1.Refresh();
         }
 
